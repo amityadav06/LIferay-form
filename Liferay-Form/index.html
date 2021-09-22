@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container contain">
+      <h1>Liferay DevOps Session - Survey</h1>
+      <p>
+        It has been a pleasure getting to you know. Please take a moment to tell
+        us how we did. We appreciate it!
+      </p>
+      <!-- Progressbar steps -->
+      <div class="progressbar">
+        <div class="progress" id="progress"></div>
+        <div
+          class="progress-step progress-step-active"
+          data-title="Participant Info"
+        ></div>
+        <div class="progress-step" data-title="Session Survey"></div>
+      </div>
+      <!-- Form -->
+      <form action="action_page2.html" target="_top" onsubmit="return">
+        <!-- Step-1 -------------------------------------------------- -->
+        <div class="form-step form-step-active">
+          <h3>Participant Info</h3>
+          <p>
+            Note that our instructors have access to the aggregated survey
+            results, not to your personal information.
+          </p>
+          <span class="text-danger font-weigth-bold"><b>*</b> </span
+          ><span>Indicates Required Fields </span>
+          <div class="mt-4 name-group">
+            <div class="form-group">
+              <label>First Name </label>
+              <span class="text-danger font-weigth-bold"><b>*</b> </span>
+              <input
+                type="text"
+                id="firstname"
+                class="form-control active inactive"
+                placeholder="First Name"
+                onkeyup="validateFirst(this)"
+              />
+              <span id="firsterror" class="text-danger font-weigth-bold"></span>
+            </div>
+            <div class="form-group">
+              <label>Last Name </label>
+              <span class="text-danger font-weigth-bold"><b>*</b> </span>
+              <input
+                type="text"
+                id="lastname"
+                class="form-control"
+                placeholder="Last Name"
+                onkeyup="validateLast(this)"
+              />
+              <span id="lasterror" class="text-danger font-weigth-bold"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Official E-Mail Address </label>
+            <span class="text-danger font-weigth-bold"><b>*</b> </span>
+            <input
+              type="email"
+              id="useremail"
+              class="form-control"
+              placeholder="Official E-Mail Address"
+              onkeyup="validateMail(this)"
+            />
+            <span id="mailerror" class="text-danger font-weigth-bold"></span>
+          </div>
+          <div class="name-group">
+            <div class="form-group">
+              <label>Designation </label>
+              <span class="text-danger font-weigth-bold"><b>*</b> </span>
+              <input
+                type="text"
+                id="designation"
+                class="form-control"
+                placeholder="Designation"
+                onkeyup="validateDes(this)"
+              />
+              <span id="desigerror" class="text-danger font-weigth-bold"></span>
+            </div>
+            <div class="form-group">
+              <label>Organization</label>
+              <span class="text-danger font-weigth-bold"><b>*</b> </span>
+              <input
+                type="text"
+                id="organization"
+                class="form-control"
+                placeholder="Organization"
+                onkeyup="validateOrg(this)"
+              />
+              <span id="orgerror" class="text-danger font-weigth-bold"></span>
+            </div>
+          </div>
+          <div>
+            <a href="#" id="next-btn" class="btn btn-next width-50 ml-auto"
+              >Next ></a
+            >
+          </div>
+        </div>
+        <!-- From Step-2 ----------------------------------------------------------------- -->
+        <div class="form-step">
+          <h3>Session Survey</h3>
+          <span class="text-danger font-weigth-bold"><b>*</b> </span
+          ><span>Indicates Required Fields </span><br /><br />
+          <caption>
+            Your Thoughts On This Session.
+          </caption>
+          <table
+            class="
+              table table-bordered table-hover table-striped
+              text-center
+              tab
+            "
+          >
+            <thead>
+              <tr>
+                <th></th>
+                <th>Strongly Disagree</th>
+                <th>Disagree</th>
+                <th>Neutral</th>
+                <th>Agree</th>
+                <th>Strongly Agree</th>
+              </tr>
+            </thead>
+            <tbody class="text-left">
+              <tr>
+                <td class="theading" scope="row">
+                  Overall, I learned and benefited from this training
+                </td>
+                <td class="td"><input type="radio" /></td>
+                <td class="td"><input type="radio" /></td>
+                <td class="td"><input type="radio" /></td>
+                <td class="td"><input type="radio" /></td>
+                <td class="td"><input type="radio" /></td>
+              </tr>
+              <tr>
+                <td class="theading" scope="row">
+                  The instructor well equiped for this training delivery
+                </td>
+                <td class="td"><input type="radio" /></td>
+                <td class="td"><input type="radio" /></td>
+                <td class="td"><input type="radio" /></td>
+                <td class="td"><input type="radio" /></td>
+                <td class="td"><input type="radio" /></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="form-group">
+            <label>Did theses session meet your objectives.</label>
+            <span class="text-danger font-weigth-bold"><b>*</b></span>
+            <select
+              id="select1"
+              onchange="validateSel1(this)"
+              class="form-select form-control sel"
+            >
+              <option selected>Choose an option</option>
+              <option value="2">Yes</option>
+              <option value="3">No</option>
+              <option value="4">To an Extent</option>
+            </select>
+            <span id="sel1" class="text-danger font-weigth-bold"></span>
+          </div>
+          <div class="form-group">
+            <label
+              >Are you likely to participate in our sessions in the
+              future?</label
+            >
+            <span class="text-danger font-weigth-bold"><b>*</b></span>
+            <select
+              id="select2"
+              onchange="validateSel2(this)"
+              class="form-select form-control sel"
+            >
+              <option selected>Choose an option</option>
+              <option value="2">Yes</option>
+              <option value="3">No</option>
+            </select>
+            <span id="sel2" class="text-danger font-weigth-bold"></span>
+          </div>
+          <div class="form-group">
+            <label>Comments and suggestions to improve</label>
+            <span class="text-danger font-weigth-bold"><b>*</b></span>
+            <textarea
+              id="select3"
+              onkeyup="validateText(this)"
+              class="form-control sel"
+            ></textarea>
+            <span id="sel3" class="text-danger font-weigth-bold"></span>
+          </div>
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Previous</a>
+            <input type="submit" value="Submit" id="submit-btn" class="btn" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
