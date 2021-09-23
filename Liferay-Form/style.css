@@ -92,14 +92,14 @@ th {
 }
 
 /* form steps */
-.form-step {
+/* .form-step {
   display: none;
   transform-origin: right;
   animation: animate 0.2s;
 }
 .form-step-active {
   display: block;
-}
+} */
 @keyframes animate {
   from {
     transform: scale(1, 0);
@@ -130,6 +130,10 @@ th {
 }
 .btn:hover {
   box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color) !important;
+}
+.btn-next {
+  margin: 1rem 0;
+  float: right;
 }
 textarea {
   height: 100px !important;

@@ -32,7 +32,7 @@ const select3 = document.getElementById("select3");
 const sel3 = document.getElementById("sel3");
 const submitBtn = document.getElementById("submit-btn");
 
-function validateFirst(inp) {
+const validateFirst = (inp) => {
   if (inp.value != "") {
     ferror.innerHTML = "";
     fname.style.backgroundColor = "#f5f5f6";
@@ -42,8 +42,8 @@ function validateFirst(inp) {
     fname.style.backgroundColor = "#ffecec";
     a = false;
   }
-}
-function validateLast(inp) {
+};
+const validateLast = (inp) => {
   if (inp.value != "") {
     lerror.innerHTML = "";
     lname.style.backgroundColor = "#f5f5f6";
@@ -53,7 +53,7 @@ function validateLast(inp) {
     lname.style.backgroundColor = "#ffecec";
     b = false;
   }
-}
+};
 function validateMail(inp) {
   const emailCheck = /^[A-Za-z_]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z]{2,6}$/;
   if (emial.value != "") {
