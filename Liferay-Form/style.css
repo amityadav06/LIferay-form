@@ -92,14 +92,14 @@ th {
 }
 
 /* form steps */
-/* .form-step {
+.form-step {
   display: none;
   transform-origin: right;
   animation: animate 0.2s;
 }
 .form-step-active {
   display: block;
-} */
+}
 @keyframes animate {
   from {
     transform: scale(1, 0);
